@@ -4,8 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.tm.ms.nerver.filter.support.FilterFactory;
-import cn.tm.ms.nerver.filter.support.FilterType;
 import cn.tm.ms.nerver.filter.sysfilter.RouteFilter;
+import cn.tm.ms.nerver.filter.type.FilterType;
 
 /**
  * 过滤模块

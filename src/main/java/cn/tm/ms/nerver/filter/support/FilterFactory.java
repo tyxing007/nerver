@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.tm.ms.nerver.common.utils.CollectionUtils;
 import cn.tm.ms.nerver.filter.entry.NerverFilter;
+import cn.tm.ms.nerver.filter.type.FilterType;
 
 /**
  * 过滤器管理工厂

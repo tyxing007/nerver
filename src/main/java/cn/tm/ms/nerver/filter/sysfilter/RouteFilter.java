@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cn.tm.ms.nerver.filter.entry.NerverFilter;
-import cn.tm.ms.nerver.filter.support.FilterType;
+import cn.tm.ms.nerver.filter.type.FilterType;
 import cn.tm.ms.nerver.route.RouteModuler;
 import cn.tm.ms.nerver.route.entry.NerverRequest;
 import cn.tm.ms.nerver.route.entry.NerverRespone;

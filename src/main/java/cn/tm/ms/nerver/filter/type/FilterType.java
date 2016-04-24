@@ -1,4 +1,4 @@
-package cn.tm.ms.nerver.filter.support;
+package cn.tm.ms.nerver.filter.type;
 
 public enum FilterType {
 
