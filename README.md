@@ -6,11 +6,11 @@
 ###1.过滤类型
 过滤规则参考了Netflix的Zuul项目进行实现,提供了以下五层过滤器:
 
-+ FilterType.PRE:请求到达Nerver服务器之前进行过滤
-+ FilterType.ROUTE:请求路由转发至源服务器(Orgin Server)之前进行过滤
-+ FilterType.RECV:请求从Orgin Server回来到达Nerver服务器之前过滤
-+ FilterType.RET:请求从Nerver服务器离开之前(响应用户)进行过滤
-+ FilterType.ERROR:当请求在Nerver服务器中发送异常时进行过滤
++ FilterType.PRE：请求到达Nerver服务器之前进行过滤
++ FilterType.ROUTE：请求路由转发至源服务器(Orgin Server)之前进行过滤
++ FilterType.RECV：请求从Orgin Server回来到达Nerver服务器之前过滤
++ FilterType.RET：请求从Nerver服务器离开之前(响应用户)进行过滤
++ FilterType.ERROR：当请求在Nerver服务器中发送异常时进行过滤
 
 
 ##二、动态规则路由
@@ -34,10 +34,14 @@
 
 ##五、隔离
 ###1.使用场景
-
+分布式服务在远程调用时,可为会发生未知的异常,进而可能会引起整个主服务进程都宕掉,则会导致大面积的服务瘫痪。为了防止单个服务依赖异常而引发其他服务一起陪葬的问题,需要对每一个远程依赖进行隔离。
 
 ##六、限流
 ###1.使用场景
+当某一片区的服务整体失败率较高时,我们可以选择拒绝部分请求,从而防止该片区集体宕掉或下线的问题；或者使用与流量的迁移过程。
 
 ##六、超时控制
 ###1.使用场景
+在分布式依赖的模块，为防止服务端长时间等待远程响应的结果，而使用超时设置来控制远程消费异常的情况。
+
+
