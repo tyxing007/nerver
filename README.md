@@ -23,6 +23,8 @@
 ###2.路由实现
 采用httpclient实现请求的转发(路由)。
 
+###3.路由类型
+目前已支持：GET、POST、PUT、DELETE、HEAD、OPTIONS、PATCH和TRACE类型请求的路由。
 
 ##三、容错
 ###1.使用场景
