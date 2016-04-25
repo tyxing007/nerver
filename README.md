@@ -27,11 +27,13 @@
 目前已支持：GET、POST、PUT、DELETE、HEAD、OPTIONS、PATCH和TRACE类型请求的路由。
 
 ###4.使用示例
-/**
- * 被路由的服务器
- * @author lry
- */
-public class OrginServer extends AbstractHandler {
+
+
+	/**
+	 * 被路由的服务器
+	 * @author lry
+	 */
+	public class OrginServer extends AbstractHandler {
 
 	public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
@@ -54,7 +56,7 @@ public class OrginServer extends AbstractHandler {
 		server.join();
 	}
 }
-
+、、、
 ##三、容错
 ###1.使用场景
 主要用于分布式系统之间进行交互的代码模块,即容错有依赖的代码模块。当分布式系统之间发生远程通信时，需要对代码模块实现容错处理(不保证事务的一致性)。
