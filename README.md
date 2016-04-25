@@ -27,7 +27,7 @@
 目前已支持：GET、POST、PUT、DELETE、HEAD、OPTIONS、PATCH和TRACE类型请求的路由。
 
 ###4.使用示例
-
+第一步：模拟启动待被路由的远程服务器
 
 	/**
 	 * 被路由的服务器
@@ -55,8 +55,46 @@
 		
 		server.join();
 	}
-}
-、、、
+	}
+
+第二步：启动微服务神经元服务器
+	
+	/**
+	 * 微服务神经
+	 * @author lry
+	 */
+	public enum Nervor {
+	
+	INSTANCE;
+	public RouteModuler routeModuler=RouteModuler.INSTANCE;
+	public IContainer container=null;
+	
+	public void start() {
+		try {
+			//添加路由规则
+			routeModuler.addRouteRule(new RouteRule(0, true, "/api/get/**", "http://127.0.0.1:8081/api/get"));
+			
+			container=new JettyContainer();
+			container.cstart(8080);
+		} catch (Throwable t) {
+			if(container!=null){
+				container.cstop();
+			}
+			t.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) throws Exception {
+		INSTANCE.start();
+	}
+	}
+
+第三步：打开浏览器访问
+http://127.0.0.1:8080/nerver/v1/api/get/123?name=nerver&data=123456
+其中“/nerver/v1”表示服务器名称和版本号
+
+
+
 ##三、容错
 ###1.使用场景
 主要用于分布式系统之间进行交互的代码模块,即容错有依赖的代码模块。当分布式系统之间发生远程通信时，需要对代码模块实现容错处理(不保证事务的一致性)。
