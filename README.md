@@ -26,6 +26,35 @@
 ###3.路由类型
 目前已支持：GET、POST、PUT、DELETE、HEAD、OPTIONS、PATCH和TRACE类型请求的路由。
 
+###4.使用示例
+/**
+ * 被路由的服务器
+ * @author lry
+ */
+public class OrginServer extends AbstractHandler {
+
+	public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setHeader("Content-Type", "text/html; charset=UTF-8");
+		
+		response.setStatus(HttpServletResponse.SC_OK);
+		baseRequest.setHandled(true);
+		
+		response.getWriter().println("已经到达源服务器了!参数:"+JSON.toJSONString(request.getParameterMap()));
+	}
+
+	public static void main(String[] args) throws Exception {
+		Server server = new Server(8081);
+		server.setHandler(new OrginServer());
+		server.start();
+		System.out.println("源服务器启动成功");
+		
+		server.join();
+	}
+}
+
 ##三、容错
 ###1.使用场景
 主要用于分布式系统之间进行交互的代码模块,即容错有依赖的代码模块。当分布式系统之间发生远程通信时，需要对代码模块实现容错处理(不保证事务的一致性)。
