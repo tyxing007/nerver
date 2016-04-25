@@ -27,8 +27,7 @@ public class OrginServer extends AbstractHandler {
 		response.setStatus(HttpServletResponse.SC_OK);
 		baseRequest.setHandled(true);
 		
-		System.out.println("参数:"+JSON.toJSONString(request.getParameterMap()));
-		response.getWriter().println("安徽打卡机圣诞节hskdsjdhasjkd kajs");
+		response.getWriter().println("已经到达源服务器了!参数:"+JSON.toJSONString(request.getParameterMap()));
 	}
 
 	public static void main(String[] args) throws Exception {
