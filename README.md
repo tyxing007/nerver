@@ -90,8 +90,9 @@
 	}
 
 第三步：打开浏览器访问
-http://127.0.0.1:8080/nerver/v1/api/get/123?name=nerver&data=123456
-其中“/nerver/v1”表示服务器名称和版本号
+
+	http://127.0.0.1:8080/nerver/v1/api/get/123?name=nerver&data=123456
+	其中“/nerver/v1”表示服务器名称和版本号
 
 
 
