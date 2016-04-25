@@ -4,14 +4,16 @@
 
 ##一、过滤
 ###1.过滤类型
-过滤规则参考了Netflix的Zuul项目进行实现,提供了以下五层过滤器:
+过滤规则(FilterType)参考了Netflix的Zuul项目进行实现,提供了以下五层过滤器:
 
-+ FilterType.PRE：请求到达Nerver服务器之前进行过滤
-+ FilterType.ROUTE：请求路由转发至源服务器(Orgin Server)之前进行过滤
-+ FilterType.RECV：请求从Orgin Server回来到达Nerver服务器之前过滤
-+ FilterType.RET：请求从Nerver服务器离开之前(响应用户)进行过滤
-+ FilterType.ERROR：当请求在Nerver服务器中发送异常时进行过滤
++ PRE：请求到达Nerver服务器之前进行过滤
++ ROUTE：请求路由转发至源服务器(Orgin Server)之前进行过滤
++ RECV：请求从Orgin Server回来到达Nerver服务器之前过滤
++ RET：请求从Nerver服务器离开之前(响应用户)进行过滤
++ ERROR：当请求在Nerver服务器中发送异常时进行过滤
 
+###2.过滤设计方案
+![过滤设计方案](docs/五层路由设计方案.png "过滤设计方案")  
 
 ##二、动态规则路由
 ###1.路由规则
